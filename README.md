@@ -17,13 +17,4 @@ A clean and responsive web application that allows users to search for real-time
 - JavaScript
 - [WeatherAPI](https://www.weatherapi.com/)
 
-## 📦 How to Use
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/rahulsingha24/Simple-weather-app.git
-   ```
-
-2. Open `index.html` in any web browser.
-
-> ⚠️ **Note**: You need a valid WeatherAPI key. Replace the placeholder in `script.js` with your own API key.
+> ⚠️ **Note**: You need a valid WeatherAPI key.
