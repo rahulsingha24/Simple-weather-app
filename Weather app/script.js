@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiKey = '812f44196742450a870163243252004';
-    const apiUrlBase = 'http://api.weatherapi.com/v1/current.json';
 
     const searchButton = document.getElementById('search-button');
     const locationInput = document.getElementById('location-input');
-    
+
     const weatherInfoDiv = document.getElementById('weather-info');
-    const errorMessageDiv = document.getElementById('error-message');
-    
+    const errorMessageDiv = document = document.getElementById('error-message');
+
     const cityNameEl = document.getElementById('city-name');
     const temperatureEl = document.getElementById('temperature');
     const weatherConditionEl = document.getElementById('weather-condition');
@@ -27,12 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const url = `${apiUrlBase}?key=${apiKey}&q=${encodeURIComponent(location)}&aqi=no`;
+        const url = `/api/weather?location=${encodeURIComponent(location)}`;
 
         try {
             const response = await fetch(url);
             if (!response.ok) {
-                throw new Error('City not found');
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'City not found');
             }
             const data = await response.json();
             updateUI(data);
